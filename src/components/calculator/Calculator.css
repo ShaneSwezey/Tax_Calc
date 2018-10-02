@@ -1,0 +1,32 @@
+#CalcSection {
+    overflow: auto;
+}
+
+.Dollarsign {
+    position: relative;
+    display: inline;
+}
+
+.Dollarsign::before {
+    content: '$';
+    position: absolute;
+    top: 0;
+    left: 5px;
+    z-index: 1;
+}
+
+.Dollarsign input {
+    padding-left: 1em;
+    font-size: 16px;
+}
+
+.FloatLeftBox {
+    float: left;
+    padding-left: 21%;
+}
+
+.FloatRightBox {
+    float: right; 
+    width: 49%;
+}
+

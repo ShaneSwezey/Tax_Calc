@@ -1,0 +1,37 @@
+section {
+    margin: auto;
+    width: 90%;
+}
+
+h1 {
+    margin-bottom: 10px;
+}
+
+hr {
+    margin: 20px auto;
+    width: 95%;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+select, input {
+    background-color: #FFF; 
+    height: 30px;
+    width: 250px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+select {
+    width: 270px;
+    height: 34px;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
