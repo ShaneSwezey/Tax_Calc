@@ -13,6 +13,7 @@ class App extends Component {
         <About />
         <hr></hr>
         <Calculator />
+        <hr></hr>
       </div>
     );
   }

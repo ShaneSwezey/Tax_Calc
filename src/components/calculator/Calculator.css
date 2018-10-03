@@ -1,5 +1,5 @@
 #CalcSection {
-    overflow: auto;
+    overflow: hidden;
 }
 
 .Dollarsign {
@@ -29,4 +29,32 @@
     float: right; 
     width: 49%;
 }
+
+.Button {
+    background: #233;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 14px;
+    color: #9d9d9d;
+}
+
+.Button:hover {
+    cursor: pointer;
+    color: #FFF
+}
+
+.Button:focus {
+    outline: none;
+}
+
+#CalcButtonWrapper {
+    overflow: hidden;
+    width: 79%;
+    margin-top: 20px;
+}
+
+#CalcButton {
+    float: right;
+}
+
 

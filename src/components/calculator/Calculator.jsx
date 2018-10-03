@@ -39,6 +39,11 @@ class Calculator extends Component {
                         </div>
                     </div>
                 </section>
+                <section>
+                    <div id="CalcButtonWrapper">
+                        <button className="Button" id="CalcButton">Calculate</button>
+                    </div>
+                </section>
             </article>
         );
     }
