@@ -8,7 +8,7 @@ class Header extends Component {
                 <nav>
                     <ul>
                         <li><a href="#About">About</a></li>
-                        <li><a href="#Calc">Federal Income Tax Calculator</a></li>
+                        <li><a href="#Calc">Federal Income Tax Bracket Calculator</a></li>
                     </ul>
                 </nav>
             </header>

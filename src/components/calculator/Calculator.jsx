@@ -6,7 +6,7 @@ class Calculator extends Component {
         return (
             <article id="Calc">
                 <section id="CalcSection">
-                    <h1>Federal Income Tax Calculator</h1>
+                    <h1>Federal Income Tax Bracket Calculator</h1>
                     <div className="FloatLeftBox">
                         <label for="FilingStatus">Filing Status</label>
                         <select id="FilingStatus" name="filing_status">
@@ -15,27 +15,11 @@ class Calculator extends Component {
                             <option value="marrieds">Married filing separately</option>
                             <option value="household">Head of household</option>
                         </select>
+                    </div>
+                    <div className="FloatRightBox">
                         <label for="AnnualWages">Annual Wages</label>
                         <div className="Dollarsign">
                             <input type="number" id="AnnualWages" min="1" step="any"></input>
-                        </div>
-                        <label for="SelfWages">Self Employment</label>
-                        <div className="Dollarsign">
-                            <input type="number" id="SelfWages" min="1" step="any"></input>
-                        </div>
-                    </div>
-                    <div className="FloatRightBox">
-                        <label for="SocialSecurity">Social Security</label>
-                        <div className="Dollarsign">
-                            <input type="number" id="SocialSecurity" min="1" step="any"></input>
-                        </div>
-                        <label for="UnearnedIncome">Unearned Income </label>
-                        <div className="Dollarsign">
-                            <input type="number" id="UnearnedIncome" min="1" step="any"></input>
-                        </div>
-                        <label for="Capitalgains">Capital Gains</label>
-                        <div className="Dollarsign">
-                            <input type="number" id="Capitalgains" min="1" step="any"></input>
                         </div>
                     </div>
                 </section>
