@@ -11,9 +11,9 @@ class Calculator extends Component {
                         <label for="FilingStatus">Filing Status</label>
                         <select id="FilingStatus" name="filing_status">
                             <option value="single">Single</option>
-                            <option value="married_filing_jointly">Married filing jointly</option>
-                            <option value="married_filing_separately">Married filing separately</option>
-                            <option value="head_of_household">Head of household</option>
+                            <option value="marriedj">Married filing jointly</option>
+                            <option value="marrieds">Married filing separately</option>
+                            <option value="household">Head of household</option>
                         </select>
                         <label for="AnnualWages">Annual Wages</label>
                         <div className="Dollarsign">
