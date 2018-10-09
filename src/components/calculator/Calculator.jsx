@@ -22,11 +22,20 @@ class Calculator extends Component {
     incomeChange(event) {
         this.setState({ income: event.target.value });
     }
-    
+ 
     async callApi() {
         try {
             const result = await fetch(`http://localhost:3001/${this.state.filingStatus}`);
-            console.log(result);
+            console.log(result.json());
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    async componentDidMount() {
+        try {
+            const result = await fetch(`http://localhost:3001/years/`);
+            console.log(result.json());
         } catch (error) {
             console.log(error);
         }
