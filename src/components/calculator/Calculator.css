@@ -20,15 +20,18 @@
     font-size: 16px;
 }
 
-.FloatLeftBox {
-    float: left;
-    padding-left: 21%;
+.floatLeft {
+    float:left;
 }
 
-.FloatRightBox {
-    float: right; 
-    width: 49%;
+.marginAuto {
+    margin: auto;
 }
+
+.floatRight {
+    float: right;
+}
+
 
 .Button {
     background: #233;
