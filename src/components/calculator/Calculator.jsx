@@ -18,15 +18,15 @@ class Calculator extends Component {
         this.callApi = this.callApi.bind(this);
     }
 
-    handleStatusChange(event) {
+    handleStatusChange = event => {
         this.setState({ filingStatus: event.target.value });
     }
 
-    incomeChange(event) {
+    incomeChange = event => {
         this.setState({ income: event.target.value });
     }
 
-    handleYearChange(event) {
+    handleYearChange = event => {
         this.setState({ filingYear: event.target.value })
     }
  
