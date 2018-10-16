@@ -39,7 +39,7 @@ class Form extends Component {
             console.log(jsonResult);
         } catch (error) {
             console.log(error);
-        }
+        }  
     }
 
     async componentDidMount() {
