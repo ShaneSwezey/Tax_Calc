@@ -1,16 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import './Calculator.css';
 
 class Form extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            filingStatus: 'single',
-            income: 0,
-            filingYear: 0,
-            incomeYears: []
-        }
 
         this.handleStatusChange = this.handleStatusChange.bind(this);
         this.incomeChange = this.incomeChange.bind(this);
@@ -40,6 +34,12 @@ class Form extends Component {
         } catch (error) {
             console.log(error);
         }  
+    }
+
+    mapStateToProps = state => {
+        return {
+            
+        }
     }
 
     async componentDidMount() {
@@ -98,4 +98,4 @@ class Form extends Component {
     }
 }
 
-export default Form;
+export default connect()(Form);
