@@ -37,10 +37,6 @@ class Form extends Component {
         }  
     }
 
-    mapStateToProps = state => ({
-        incomeYears: state.years.incomeYears
-    });
-
     componentDidMount() {
       this.props.dispatch(getAvailableYears());
     }
@@ -48,7 +44,7 @@ class Form extends Component {
     render() {
         const { error, loading, incomeYears } = this.props;
 
-        if (errror) {
+        if (error) {
             return <div>Error! {error.message}</div>;
         }
 
@@ -89,5 +85,9 @@ class Form extends Component {
         );
     }
 }
+
+const mapStateToProps = state => ({
+    incomeYears: state.years.incomeYears
+});
 
 export default connect(mapStateToProps)(Form);
