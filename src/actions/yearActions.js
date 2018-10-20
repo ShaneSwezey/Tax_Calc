@@ -13,7 +13,7 @@ export function getAvailableYears() {
 }
 
 function handleErrors(response) {
-    if (!resonse.ok) {
+    if (!response.ok) {
         throw Error(response.statusText);
     }
     return response;
