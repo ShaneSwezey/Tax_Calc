@@ -1,4 +1,4 @@
-export const initState = {
+export const initialState = {
     filingStatus: 'single',
     income: 0,
     filingYear: 0,
