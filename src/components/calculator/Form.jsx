@@ -54,7 +54,7 @@ class Form extends Component {
             return <div>Loading...</div>;
         }
         
-
+        
         return (
             <form onSubmit={this.callApi}>
                 <h1>Federal Income Tax Bracket Calculator</h1>
@@ -91,7 +91,8 @@ class Form extends Component {
 
 const mapStateToProps = state => ({
     incomeYears: state.incomeYears,
-    filingYear: state.filingYears,
+    filingYear: state.filingYear,
+    filingStatus: state.filingStatus,
     income: state.income,
     error: state.error,
     loading: state.loading
