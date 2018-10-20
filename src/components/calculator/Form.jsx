@@ -42,22 +42,25 @@ class Form extends Component {
     }
 
     render() {
-        const { error, loading, incomeYears } = this.props;
+        const { error, loading, incomeYears, filingYear, filingStatus,  income } = this.props;
 
+        
         if (error) {
             return <div>Error! {error.message}</div>;
         }
+        
 
         if (loading) {
             return <div>Loading...</div>;
         }
+        
 
         return (
             <form onSubmit={this.callApi}>
                 <h1>Federal Income Tax Bracket Calculator</h1>
                     <div className="floatLeft">
                         <label htmlFor="FilingStatus">Filing Status</label>
-                        <select id="FilingStatus" name="filing_status" value={this.filingStatus} onChange={this.handleStatusChange}>
+                        <select id="FilingStatus" name="filing_status" value={filingStatus} onChange={this.handleStatusChange}>
                             <option value="single">Single</option>
                             <option value="marriedj">Married filing jointly</option>
                             <option value="marrieds">Married filing separately</option>
@@ -67,12 +70,12 @@ class Form extends Component {
                     <div className="floatLeft marginAuto">
                     <label htmlFor="AnnualWages">Annual Wages</label>
                         <div className="Dollarsign">
-                            <input type="number" id="AnnualWages" min="1" step="any" value={this.state.income} onChange={this.incomeChange}></input>
+                            <input type="number" id="AnnualWages" min="1" step="any" value={income} onChange={this.incomeChange}></input>
                         </div>
                     </div>
                     <div className="floatRight" >
                         <label htmlFor="IncomeYear" >Income Year</label>
-                        <select id="IncomeYear" value={this.state.filingYear} onChange={this.handleYearChange}>
+                        <select id="IncomeYear" value={filingYear} onChange={this.handleYearChange}>
                             {incomeYears.map((year, count = 0) => 
                                 <option key={count++} value={year}>{year}</option>
                             )}
@@ -88,8 +91,10 @@ class Form extends Component {
 
 const mapStateToProps = state => ({
     incomeYears: state.incomeYears,
-    filingStatus: state.filingStatus,
-
+    filingYear: state.filingYears,
+    income: state.income,
+    error: state.error,
+    loading: state.loading
 });
 
 export default connect(mapStateToProps)(Form);

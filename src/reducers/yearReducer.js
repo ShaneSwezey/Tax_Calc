@@ -17,6 +17,7 @@ export default function yearReducer(state = initialState, action) {
         case FETCH_YEARS_SUCCESS:
             return {
                 ...state,
+                loading: false,
                 incomeYears: action.payload.years,
                 filingYear: action.payload.years[0]
             };
