@@ -57,7 +57,7 @@ class Form extends Component {
                 <h1>Federal Income Tax Bracket Calculator</h1>
                     <div className="floatLeft">
                         <label htmlFor="FilingStatus">Filing Status</label>
-                        <select id="FilingStatus" name="filing_status" value={this.state.filingStatus} onChange={this.handleStatusChange}>
+                        <select id="FilingStatus" name="filing_status" value={this.filingStatus} onChange={this.handleStatusChange}>
                             <option value="single">Single</option>
                             <option value="marriedj">Married filing jointly</option>
                             <option value="marrieds">Married filing separately</option>
@@ -87,7 +87,9 @@ class Form extends Component {
 }
 
 const mapStateToProps = state => ({
-    incomeYears: state.years.incomeYears
+    incomeYears: state.incomeYears,
+    filingStatus: state.filingStatus,
+
 });
 
 export default connect(mapStateToProps)(Form);
