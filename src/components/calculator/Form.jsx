@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { getAvailableYears } from '../../actions/yearActions';
 import './Calculator.css';
 
 class Form extends Component {
@@ -36,35 +37,24 @@ class Form extends Component {
         }  
     }
 
-    mapStateToProps = state => {
-        return {
-            
-        }
-    }
+    mapStateToProps = state => ({
+        incomeYears: state.years.incomeYears
+    });
 
-    async componentDidMount() {
-        let initialYears = [];
-        try {
-            const result = await fetch(`http://localhost:3001/years/`);
-            const resJson = await result.json(); 
-            initialYears = resJson.years;
-            this.setState({ 
-                incomeYears: initialYears,
-                filingYear: initialYears[0]
-            });
-        } catch (err) {
-            console.log({
-                error: err
-            });
-        }
+    componentDidMount() {
+      this.props.dispatch(getAvailableYears());
     }
 
     render() {
-        let yearOptions = this.state.incomeYears.map((year, count = 0) => 
-            <option key={count++} value={year}>{year}</option>
-        );
+        const { error, loading, incomeYears } = this.props;
 
-        if (!yearOptions) { return null; }
+        if (errror) {
+            return <div>Error! {error.message}</div>;
+        }
+
+        if (loading) {
+            return <div>Loading...</div>;
+        }
 
         return (
             <form onSubmit={this.callApi}>
@@ -87,7 +77,9 @@ class Form extends Component {
                     <div className="floatRight" >
                         <label htmlFor="IncomeYear" >Income Year</label>
                         <select id="IncomeYear" value={this.state.filingYear} onChange={this.handleYearChange}>
-                            {yearOptions}
+                            {incomeYears.map((year, count = 0) => 
+                                <option key={count++} value={year}>{year}</option>
+                            )}
                         </select>
                     </div>
                     <div id="CalcButtonWrapper">
@@ -98,4 +90,4 @@ class Form extends Component {
     }
 }
 
-export default connect()(Form);
+export default connect(mapStateToProps)(Form);
