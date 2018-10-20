@@ -3,6 +3,8 @@ import {
     FETCH_YEARS_SUCCESS,
     FETCH_YEARS_FAILURE
 } from '../actions/yearActions';
+import { initialState } from '../state/initstate';
+
 
 export default function yearReducer(state = initialState, action) {
     switch(action.type) {
