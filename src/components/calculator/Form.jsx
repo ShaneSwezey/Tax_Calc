@@ -3,28 +3,7 @@ import { connect } from 'react-redux';
 import { getAvailableYears } from '../../actions/yearActions';
 import './Calculator.css';
 
-class Form extends Component {
-    constructor(props) {
-        super(props);
-
-        this.handleStatusChange = this.handleStatusChange.bind(this);
-        this.incomeChange = this.incomeChange.bind(this);
-        this.handleYearChange = this.handleYearChange.bind(this);
-        this.callApi = this.callApi.bind(this);
-    }
-
-    handleStatusChange = event => {
-        this.setState({ filingStatus: event.target.value });
-    }
-
-    incomeChange = event => {
-        this.setState({ income: event.target.value });
-    }
-
-    handleYearChange = event => {
-        this.setState({ filingYear: event.target.value })
-    }
- 
+class Form extends Component { 
     callApi = async(event) => {
         event.preventDefault();
         try {
@@ -42,18 +21,18 @@ class Form extends Component {
     }
 
     render() {
-        const { error, loading, incomeYears, filingYear, filingStatus,  income } = this.props;
+        const statusSelections = [{ key: 'single', value: 'Single'}, 
+        {key: 'marriedj', value: 'Married filing jointly'}, {key: 'mmarieds', value: 'Married filing Seperately'}, 
+        {key: 'household', value: 'Head of household'}];
+        const { error, loading, incomeYears, filingYear, filingStatus, income } = this.props;
 
-        
         if (error) {
             return <div>Error! {error.message}</div>;
         }
         
-
         if (loading) {
             return <div>Loading...</div>;
         }
-        
         
         return (
             <form onSubmit={this.callApi}>
@@ -61,16 +40,15 @@ class Form extends Component {
                     <div className="floatLeft">
                         <label htmlFor="FilingStatus">Filing Status</label>
                         <select id="FilingStatus" name="filing_status" value={filingStatus} onChange={this.handleStatusChange}>
-                            <option value="single">Single</option>
-                            <option value="marriedj">Married filing jointly</option>
-                            <option value="marrieds">Married filing separately</option>
-                            <option value="household">Head of household</option>
+                            {statusSelections.map(selection => 
+                                <option key={selection.key} value={selection.key}>{selection.value}</option>
+                            )}
                         </select>
                     </div>
                     <div className="floatLeft marginAuto">
                     <label htmlFor="AnnualWages">Annual Wages</label>
                         <div className="Dollarsign">
-                            <input type="number" id="AnnualWages" min="1" step="any" value={income} onChange={this.incomeChange}></input>
+                            <input type="number" id="AnnualWages" min="1" step="any" value={income} onChange={this.handleIncomeChange}></input>
                         </div>
                     </div>
                     <div className="floatRight" >
