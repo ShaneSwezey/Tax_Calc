@@ -4,7 +4,7 @@ import { getAvailableYears } from '../../actions/yearActions';
 import { reduxForm, Field } from 'redux-form';
 import './Calculator.css';
 
-class Form extends Component { 
+class TaxBracketForm extends Component { 
     callApi = async(event) => {
         event.preventDefault();
         try {
@@ -69,6 +69,10 @@ class Form extends Component {
     }
 }
 
+TaxBracketForm = reduxForm({
+    form: 'initializeFromState'
+})(TaxBracketForm)
+
 const mapStateToProps = state => ({
     incomeYears: state.year.incomeYears,
     filingYear: state.year.filingYear,
@@ -78,4 +82,4 @@ const mapStateToProps = state => ({
     loading: state.year.loading
 });
 
-export default connect(mapStateToProps)(Form);
+export default connect(mapStateToProps)(TaxBracketForm);

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import Form from './Form';
+import TaxBracketForm from './TaxBracketForm';
 import './Calculator.css';
+
 
 const Calculator = props => (
     <article id="Calc">
         <section id="CalcSection">
-            <Form />
+            <TaxBracketForm />
         </section>
     </article>
 )
