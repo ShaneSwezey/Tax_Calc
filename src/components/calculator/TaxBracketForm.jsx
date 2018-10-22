@@ -26,7 +26,7 @@ class TaxBracketForm extends Component {
         {key: 'marriedj', value: 'Married filing jointly'}, {key: 'marrieds', value: 'Married filing Seperately'}, 
         {key: 'household', value: 'Head of household'}];
 
-        const { error, loading, incomeYears} = this.props;
+        const { error, loading, incomeYears, handleSubmit} = this.props;
 
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -37,7 +37,7 @@ class TaxBracketForm extends Component {
         }
         
         return (
-            <form onSubmit={this.callApi}>
+            <form onSubmit={handleSubmit(this.callApi.bind(this))}>
                 <h1>Federal Income Tax Bracket Calculator</h1>
                     <div className="floatLeft">
                         <label htmlFor="FilingStatus">Filing Status</label>
