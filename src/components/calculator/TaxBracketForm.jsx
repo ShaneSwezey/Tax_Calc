@@ -26,7 +26,7 @@ class TaxBracketForm extends Component {
         {key: 'marriedj', value: 'Married filing jointly'}, {key: 'marrieds', value: 'Married filing Seperately'}, 
         {key: 'household', value: 'Head of household'}];
 
-        const { error, loading, incomeYears, handleSubmit} = this.props;
+        const { error, loading, incomeYears, handleSubmit } = this.props;
 
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -70,7 +70,7 @@ class TaxBracketForm extends Component {
 }
 
 TaxBracketForm = reduxForm({
-    form: 'initializeFromState' // Unique identifier
+    form: 'taxBracketForm' // Unique identifier
 })(TaxBracketForm)
 
 TaxBracketForm = connect( state => ({
