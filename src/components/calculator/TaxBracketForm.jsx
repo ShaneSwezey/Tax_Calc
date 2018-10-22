@@ -26,7 +26,7 @@ class TaxBracketForm extends Component {
         {key: 'marriedj', value: 'Married filing jointly'}, {key: 'marrieds', value: 'Married filing Seperately'}, 
         {key: 'household', value: 'Head of household'}];
 
-        const { error, loading, incomeYears, filingYear, filingStatus, income } = this.props;
+        const { error, loading, incomeYears} = this.props;
 
         if (error) {
             return <div>Error! {error.message}</div>;
@@ -41,25 +41,25 @@ class TaxBracketForm extends Component {
                 <h1>Federal Income Tax Bracket Calculator</h1>
                     <div className="floatLeft">
                         <label htmlFor="FilingStatus">Filing Status</label>
-                        <select id="FilingStatus" name="filing_status" value={filingStatus} onChange={this.handleStatusChange}>
+                        <Field component="select" id="FilingStatus" name="filing_status">
                             {statusSelections.map(selection => 
                                 <option key={selection.key} value={selection.key}>{selection.value}</option>
                             )}
-                        </select>
+                        </Field>
                     </div>
                     <div className="floatLeft marginAuto">
                     <label htmlFor="AnnualWages">Annual Wages</label>
                         <div className="Dollarsign">
-                            <input type="number" id="AnnualWages" min="1" step="any" value={income} onChange={this.handleIncomeChange}></input>
+                            <Field component="input" type="number" id="AnnualWages" name="annual_wages" min="1" step="any"></Field>
                         </div>
                     </div>
                     <div className="floatRight" >
                         <label htmlFor="IncomeYear" >Income Year</label>
-                        <select id="IncomeYear" value={filingYear} onChange={this.handleYearChange}>
+                        <Field component="select" id="IncomeYear" name="income_year">
                             {incomeYears.map((year, count = 0) => 
                                 <option key={count++} value={year}>{year}</option>
                             )}
-                        </select>
+                        </Field>
                     </div>
                     <div id="CalcButtonWrapper">
                         <button className="Button" id="CalcButton" >Calculate</button>
@@ -70,9 +70,16 @@ class TaxBracketForm extends Component {
 }
 
 TaxBracketForm = reduxForm({
-    form: 'initializeFromState'
+    form: 'initializeFromState' // Unique identifier
 })(TaxBracketForm)
 
+TaxBracketForm = connect( state => ({
+    incomeYears: state.year.incomeYears,
+    error: state.year.error,
+    loading: state.year.loading
+}))(TaxBracketForm)
+
+/*
 const mapStateToProps = state => ({
     incomeYears: state.year.incomeYears,
     filingYear: state.year.filingYear,
@@ -81,5 +88,6 @@ const mapStateToProps = state => ({
     error: state.year.error,
     loading: state.year.loading
 });
+*/
 
-export default connect(mapStateToProps)(TaxBracketForm);
+export default TaxBracketForm;
