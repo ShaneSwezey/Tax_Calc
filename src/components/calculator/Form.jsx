@@ -69,12 +69,12 @@ class Form extends Component {
 }
 
 const mapStateToProps = state => ({
-    incomeYears: state.incomeYears,
-    filingYear: state.filingYear,
-    filingStatus: state.filingStatus,
-    income: state.income,
-    error: state.error,
-    loading: state.loading
+    incomeYears: state.year.incomeYears,
+    filingYear: state.year.filingYear,
+    filingStatus: state.year.filingStatus,
+    income: state.year.income,
+    error: state.year.error,
+    loading: state.year.loading
 });
 
 export default connect(mapStateToProps)(Form);
