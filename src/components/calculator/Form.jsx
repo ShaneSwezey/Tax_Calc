@@ -24,6 +24,7 @@ class Form extends Component {
         const statusSelections = [{ key: 'single', value: 'Single'}, 
         {key: 'marriedj', value: 'Married filing jointly'}, {key: 'mmarieds', value: 'Married filing Seperately'}, 
         {key: 'household', value: 'Head of household'}];
+        
         const { error, loading, incomeYears, filingYear, filingStatus, income } = this.props;
 
         if (error) {
