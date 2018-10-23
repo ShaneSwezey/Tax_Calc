@@ -5,10 +5,9 @@ import { reduxForm, Field } from 'redux-form';
 import './Calculator.css';
 
 class TaxBracketForm extends Component { 
-    callApi = async(event) => {
-        event.preventDefault();
+    callApi = async (values) => {
         try {
-            const url = `http://localhost:3001/${this.state.filingStatus}/${this.state.filingYear}/${this.state.income}`;
+            const url = `http://localhost:3001/${values.filing_status}/${values.income_year}/${values.annual_wages}`;
             const result = await fetch(url);
             const jsonResult = await result.json();
             console.log(jsonResult);
