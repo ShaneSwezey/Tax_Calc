@@ -3,7 +3,7 @@ import TaxBracketForm from './TaxBracketForm';
 import './Calculator.css';
 
 
-const Calculator = props => (
+const Calculator = () => (
     <article id="Calc">
         <section id="CalcSection">
             <TaxBracketForm />
