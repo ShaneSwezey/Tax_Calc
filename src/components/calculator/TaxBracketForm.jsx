@@ -16,8 +16,19 @@ class TaxBracketForm extends Component {
         }  
     }
 
-    componentDidMount() {
-      this.props.dispatch(getAvailableYears());
+    // Initialize form with respecting data from props
+    handleInitialization() {
+        const intialData = {
+            "filing_status": this.props.filingStatus,
+            "annual_wages": this.props.income,
+            "income_year": this.props.incomeYears[0]
+        };
+        this.props.initialize(intialData);  
+    }
+
+    async componentDidMount() {
+      await this.props.dispatch(getAvailableYears());
+      this.handleInitialization();
     }
 
     render() {
@@ -42,7 +53,7 @@ class TaxBracketForm extends Component {
                         <label htmlFor="FilingStatus">Filing Status</label>
                         <Field component="select" id="FilingStatus" name="filing_status">
                             {statusSelections.map(selection => 
-                                <option key={selection.key} value={selection.key}>{selection.value}</option>
+                                <option key={selection.key}>{selection.value}</option>
                             )}
                         </Field>
                     </div>
@@ -55,8 +66,8 @@ class TaxBracketForm extends Component {
                     <div className="floatRight" >
                         <label htmlFor="IncomeYear" >Income Year</label>
                         <Field component="select" id="IncomeYear" name="income_year">
-                            {incomeYears.map((year, count = 0) => 
-                                <option key={count++} value={year}>{year}</option>
+                            {incomeYears.map(year => 
+                                <option key={year}>{year}</option>
                             )}
                         </Field>
                     </div>
@@ -72,8 +83,12 @@ TaxBracketForm = reduxForm({
     form: 'taxBracketForm' // Unique identifier
 })(TaxBracketForm)
 
+
+// Populate prop with state values 
 TaxBracketForm = connect( state => ({
     incomeYears: state.year.incomeYears,
+    filingStatus: state.year.filingStatus,
+    income: state.year.income,
     error: state.year.error,
     loading: state.year.loading
 }))(TaxBracketForm)
