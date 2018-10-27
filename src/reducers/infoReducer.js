@@ -15,7 +15,11 @@ export default function infoReducer(state, action) {
         case FETCH_BRACKET_SUCCESS:
             return {
                 ...state,
-                
+                year: action.payload.year,
+                taxBracket: action.payload.taxBracket,
+                taxAmount: action.payload.taxAmount,
+                percOfInc: action.payload.percentOfIncome,
+                rates: action.payload.rates
             };
         case FETCH_BRACKET_FAILURE:
             return {
