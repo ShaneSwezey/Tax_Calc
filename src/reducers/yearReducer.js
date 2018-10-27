@@ -5,7 +5,6 @@ import {
 } from '../actions/yearActions';
 import { initialState } from '../state/initialstate';
 
-
 export default function yearReducer(state = initialState, action) {
     switch(action.type) {
         case FETCH_YEARS_BEGIN:
@@ -24,7 +23,7 @@ export default function yearReducer(state = initialState, action) {
             return {
                 ...state,
                 loading: false,
-                error: action.payload.error,
+                error: action.payload.error,   
             };
         default:
             return state;

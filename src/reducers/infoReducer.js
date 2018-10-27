@@ -15,7 +15,7 @@ export default function infoReducer(state, action) {
         case FETCH_BRACKET_SUCCESS:
             return {
                 ...state,
-
+                
             };
         case FETCH_BRACKET_FAILURE:
             return {
