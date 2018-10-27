@@ -1,10 +1,10 @@
 const URL = 'http://localhost:3001/';
 
-export const retrieveBracketInfo = (filingStatus, incomeYear, annualWage) => {
+export const retrieveBracketInfo = (values) => {
     return async(dispatch) => {
         dispatch(fetchBracketBegin());
         try {
-            const fetchUrl = `${URL}${filingStatus}/${incomeYear}/${annualWage}`;
+            const fetchUrl = `${URL}${values.filing_status}/${values.income_year}/${values.annual_wages}`;
             const result = await fetch(fetchUrl);
             const jsonResult = await result.json();
             dispatch(fetchBracketSuccess(jsonResult));
