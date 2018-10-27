@@ -1,20 +1,16 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { getAvailableYears } from '../../actions/yearActions';
+import { retrieveBracketInfo } from '../../actions/infoActions';
 import { reduxForm, Field } from 'redux-form';
 import './Calculator.css';
 
 class TaxBracketForm extends Component { 
-    callApi = async (values) => {
-        try {
-            const url = `http://localhost:3001/${values.filing_status}/${values.income_year}/${values.annual_wages}`;
-            const result = await fetch(url);
-            const jsonResult = await result.json();
-            console.log(jsonResult);
-        } catch (error) {
-            console.log(error);
-        }  
+    
+    getBracketInfo = (values) => {
+        retrieveBracketInfo(values);
     }
+
 
     // Initialize form with respecting data from props
     handleInitialization() {
@@ -47,7 +43,7 @@ class TaxBracketForm extends Component {
         }
         
         return (
-            <form onSubmit={handleSubmit(this.callApi.bind(this))}>
+            <form onSubmit={handleSubmit(this.getBracketInfo.bind(this))}>
                 <h1>Federal Income Tax Bracket Calculator</h1>
                     <div className="floatLeft">
                         <label htmlFor="FilingStatus">Filing Status</label>
