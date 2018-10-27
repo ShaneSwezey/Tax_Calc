@@ -7,11 +7,13 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import yearReducer from './reducers/yearReducer';
+import bracketReducer from './reducers/infoReducer';
 import { reducer as formReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
     form: formReducer,
-    year: yearReducer
+    year: yearReducer,
+    bracket: bracketReducer
 });
 
 
