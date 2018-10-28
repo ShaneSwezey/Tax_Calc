@@ -4,10 +4,5 @@ export const initialState = {
         incomeYears: [],
         loading: false,
         error: null,
-        year: '',
-        taxBracket: null,
-        taxAmount: null,
-        percOfInc: null,
-        rates: [],
 };
 
