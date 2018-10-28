@@ -11,7 +11,6 @@ class TaxBracketForm extends Component {
         retrieveBracketInfo(values);
     }
 
-
     // Initialize form with respecting data from props
     handleInitialization() {
         const intialData = {
