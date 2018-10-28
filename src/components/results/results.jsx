@@ -18,13 +18,13 @@ const Results = props => {
 }
 
 const mapStateToProps = state => ({
-    error: state.error,
-    loading: state.loading,
-    year: state.year,
-    taxBracket: state.taxBracket,
-    taxAmount: state.taxAmount,
-    percOfInc: state.percOfInc,
-    rates: state.rates
+    error: state.bracket.error,
+    loading: state.bracket.loading,
+    year: state.bracket.year,
+    taxBracket: state.bracket.taxBracket,
+    taxAmount: state.bracket.taxAmount,
+    percOfInc: state.bracket.percOfInc,
+    rates: state.bracket.rates
 });
 
 export default connect(mapStateToProps)(Results);
