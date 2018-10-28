@@ -1,4 +1,4 @@
-export const initialState = {
+export const YearState = {
         filingStatus: 'single',
         income: 0,
         incomeYears: [],
