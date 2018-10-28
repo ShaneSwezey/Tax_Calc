@@ -3,8 +3,9 @@ import {
     FETCH_BRACKET_SUCCESS,
     FETCH_BRACKET_FAILURE
 } from '../actions/infoActions';
+import { initialState } from '../state/initialstate';
 
-export default function infoReducer(state = null, action) {
+export default function infoReducer(state = initialState, action) {
     switch(action.type) {
         case FETCH_BRACKET_BEGIN:
             return {

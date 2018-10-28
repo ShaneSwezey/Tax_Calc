@@ -1,14 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Results = (props) => {
+const Results = () => {
     
     let { year, taxBracket, taxAmount, percOfInc, rates } = this.props;
 
-    if (error) { 
-        return <div>Error! {error.message}</div>;
-    }
-    
     if (year === null) return ( <div></div> )
 
     return (
@@ -22,8 +18,8 @@ const Results = (props) => {
 }
 
 const mapStateToProps = state => ({
-    error: state.year.error,
-    loading: state.year.loading,
+    error: state.error,
+    loading: state.loading,
     year: state.year,
     taxBracket: state.taxBracket,
     taxAmount: state.taxAmount,
