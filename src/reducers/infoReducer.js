@@ -3,7 +3,7 @@ import {
     FETCH_BRACKET_SUCCESS,
     FETCH_BRACKET_FAILURE
 } from '../actions/infoActions';
-import { initialState } from '../state/initialstate';
+import { initialState } from '../state/YearState';
 
 export default function infoReducer(state = initialState, action) {
     switch(action.type) {
