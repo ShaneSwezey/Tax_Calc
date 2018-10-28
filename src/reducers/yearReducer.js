@@ -3,9 +3,9 @@ import {
     FETCH_YEARS_SUCCESS,
     FETCH_YEARS_FAILURE
 } from '../actions/yearActions';
-import { initialState } from '../state/initialstate';
+import { YearState } from '../state/YearState';
 
-export default function yearReducer(state = initialState, action) {
+export default function yearReducer(state = YearState, action) {
     switch(action.type) {
         case FETCH_YEARS_BEGIN:
             return {
