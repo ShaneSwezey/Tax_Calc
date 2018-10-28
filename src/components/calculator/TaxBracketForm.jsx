@@ -7,8 +7,8 @@ import './Calculator.css';
 
 class TaxBracketForm extends Component { 
     
-    getBracketInfo = (values) => {
-        retrieveBracketInfo(values);
+    getBracketInfo = async (values) => {
+        await this.props.dispatch(retrieveBracketInfo(values));
     }
 
     // Initialize form with respecting data from props

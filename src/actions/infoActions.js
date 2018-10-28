@@ -7,6 +7,7 @@ export const retrieveBracketInfo = (values) => {
             const fetchUrl = `${URL}${values.filing_status}/${values.income_year}/${values.annual_wages}`;
             const result = await fetch(fetchUrl);
             const jsonResult = await result.json();
+            console.log(jsonResult);
             dispatch(fetchBracketSuccess(jsonResult));
             //return jsonResult;
         } catch (error) {

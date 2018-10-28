@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-const Results = () => {
+const Results = props => {
     
     let { year, taxBracket, taxAmount, percOfInc, rates } = this.props;
 
