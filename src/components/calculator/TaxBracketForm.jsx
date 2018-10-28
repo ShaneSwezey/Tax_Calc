@@ -34,7 +34,7 @@ class TaxBracketForm extends Component {
 
         const { error, loading, incomeYears, handleSubmit } = this.props;
 
-        if (error) {
+        if (error) { 
             return <div>Error! {error.message}</div>;
         }
         
