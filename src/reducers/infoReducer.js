@@ -3,9 +3,9 @@ import {
     FETCH_BRACKET_SUCCESS,
     FETCH_BRACKET_FAILURE
 } from '../actions/infoActions';
-import { initialState } from '../state/YearState';
+import { BracketState } from '../state/BracketState';
 
-export default function infoReducer(state = initialState, action) {
+export default function infoReducer(state = BracketState, action) {
     switch(action.type) {
         case FETCH_BRACKET_BEGIN:
             return {
