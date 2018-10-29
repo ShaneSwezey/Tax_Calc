@@ -1,5 +1,5 @@
 export const BracketState = {
-    year: '',
+    year: null,
     taxBracket: null,
     taxAmount: null,
     percOfInc: null,
