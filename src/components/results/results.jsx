@@ -5,7 +5,7 @@ class Results extends Component {
     
     render() {
         let { year, taxBracket, taxAmount, percOfInc, rates } = this.props;
-        if (year === null) return ( <div></div> )
+        if (year === null) return ( <div></div> );
 
         return (
             <article id="results">
@@ -14,7 +14,7 @@ class Results extends Component {
                 <div>Amount Taxed: ${taxAmount}</div>
                 <div>Percentage of Income: {percOfInc}</div>
             </article>
-        )
+        );
     }
 }
 
