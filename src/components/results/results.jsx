@@ -1,20 +1,21 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-const Results = props => {
+class Results extends Component {
     
-    let { year, taxBracket, taxAmount, percOfInc, rates } = this.props;
+    render() {
+        let { year, taxBracket, taxAmount, percOfInc, rates } = this.props;
+        if (year === null) return ( <div></div> )
 
-    if (year === null) return ( <div></div> )
-
-    return (
-        <article id="results">
-            <div>Year: {year}</div>
-            <div>Tax Bracket: {taxBracket}</div>
-            <div>Amount Taxed: ${taxAmount}</div>
-            <div>Percentage of Income: {percOfInc}</div>
-        </article>
-    )
+        return (
+            <article id="results">
+                <div>Year: {year}</div>
+                <div>Tax Bracket: {taxBracket}</div>
+                <div>Amount Taxed: ${taxAmount}</div>
+                <div>Percentage of Income: {percOfInc}</div>
+            </article>
+        )
+    }
 }
 
 const mapStateToProps = state => ({

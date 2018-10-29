@@ -15,6 +15,7 @@ class App extends Component {
         <hr></hr>
         <Calculator />
         <hr></hr>
+        <Results />
       </div>
     );
   }
