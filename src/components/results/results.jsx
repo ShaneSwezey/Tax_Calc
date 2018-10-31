@@ -15,7 +15,9 @@ class Results extends Component {
         if (resultsData.year === null) return ( <div></div> );
 
         return (
-            <DisplayResults data={resultsData}/>
+            <article id="results">
+                <DisplayResults data={resultsData}/>
+            </article>
         );
     }
 }
