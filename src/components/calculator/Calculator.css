@@ -2,6 +2,10 @@
     overflow: hidden;
 }
 
+.sSection {
+    width: 75%;
+}
+
 .Dollarsign {
     position: relative;
     display: inline;
@@ -32,7 +36,6 @@
     float: right;
 }
 
-
 .Button {
     background: #233;
     padding: 10px;
@@ -52,7 +55,7 @@
 
 #CalcButtonWrapper {
     overflow: hidden;
-    width: 79%;
+    width: 100%;
     margin-top: 20px;
 }
 
