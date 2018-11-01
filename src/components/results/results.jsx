@@ -17,7 +17,7 @@ class Results extends Component {
         return (
             <article id="results">
                 <h1>Results</h1>
-                <DisplayResults data={resultsData}/>
+            <DisplayResults data={resultsData}/>
             </article>
         );
     }
