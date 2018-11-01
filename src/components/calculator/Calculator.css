@@ -37,14 +37,6 @@
     margin-bottom: 20px;
 }
 
-.floatRight:after { 
-    content: ""; 
-    visibility: hidden; 
-    display: block; 
-    height: 0; 
-    clear: both;
- }
-
 .Button {
     background: #233;
     padding: 10px;
