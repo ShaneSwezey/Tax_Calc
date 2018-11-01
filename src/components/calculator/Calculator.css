@@ -34,7 +34,16 @@
 
 .floatRight {
     float: right;
+    margin-bottom: 20px;
 }
+
+.floatRight:after { 
+    content: ""; 
+    visibility: hidden; 
+    display: block; 
+    height: 0; 
+    clear: both;
+ }
 
 .Button {
     background: #233;
@@ -56,7 +65,6 @@
 #CalcButtonWrapper {
     overflow: hidden;
     width: 100%;
-    margin-top: 20px;
 }
 
 #CalcButton {
