@@ -1,12 +1,12 @@
 import React from 'react';
 
 const DisplayResults = ({data: { year, taxBracket, taxAmount, percOfInc, rates }}) => (
-    <section>
+    <div>
         <div>Year: {year}</div>
         <div>Tax Bracket: {taxBracket}%</div>
         <div>Amount Taxed: ${taxAmount}</div>
         <div>Percentage of Income: {percOfInc}%</div>
-    </section>
+    </div>
 );
 
 export default DisplayResults;
