@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import DisplayResults from './DisplayResults';
+import Result from './Result';
 
 class Results extends Component {
     render() {
@@ -18,7 +18,10 @@ class Results extends Component {
             <article id="results">
                 <section>
                     <h1>Results</h1>
-                    <DisplayResults data={resultsData}/>
+                    <Result title="Year:" data={resultsData.year}/>
+                    <Result title="Tax Bracket:" data={resultsData.taxBracket} percent="t"/>
+                    <Result title="Tax Amount:" data={resultsData.taxAmount}/>
+                    <Result title="Percentage Of Income:" data={resultsData.percOfInc} percent="t"/>
                 </section>
             </article>
         );
