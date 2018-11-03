@@ -21,7 +21,7 @@ class Results extends Component {
                     <Result title="Year" data={resultsData.year}/>
                     <Result title="Tax Bracket" data={resultsData.taxBracket} percent="t"/>
                     <Result title="Tax Amount" data={resultsData.taxAmount} dollarSign="t"/>
-                    <Result title="Percentage Of Income" data={resultsData.percOfInc} percent="t"/>
+                    <Result title="Percentage of Income" data={resultsData.percOfInc} percent="t"/>
                 </section>
             </article>
         );
