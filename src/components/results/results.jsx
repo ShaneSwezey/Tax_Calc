@@ -7,7 +7,7 @@ class Results extends Component {
         const resultsData = {
             year: this.props.year,
             taxBracket: this.props.taxBracket,
-            taxAmount: (Math.floor(this.props.taxAmount * 100) / 100).toLocaleString('en'),
+            taxAmount: (Math.floor(this.props.taxAmount * 100) / 100).toLocaleString('en'), // Number formatting
             percOfInc: this.props.percOfInc,
             rate: this.props.rates
         };
