@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import Result from './Result';
+import Result from './Result.jsx';
+import PercentResult from './PercentResult.jsx';
+import DollarResult from './DollarResult';
 
 class Results extends Component {
     render() {
@@ -19,9 +21,9 @@ class Results extends Component {
                 <section>
                     <h1>Results</h1>
                     <Result title="Year" data={resultsData.year}/>
-                    <Result title="Tax Bracket" data={resultsData.taxBracket} percent="t"/>
-                    <Result title="Tax Amount" data={resultsData.taxAmount} dollarSign="t"/>
-                    <Result title="Percentage of Income" data={resultsData.percOfInc} percent="t"/>
+                    <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
+                    <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
+                    <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
                 </section>
             </article>
         );
