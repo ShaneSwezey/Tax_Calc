@@ -7,7 +7,7 @@ class Results extends Component {
         const resultsData = {
             year: this.props.year,
             taxBracket: this.props.taxBracket,
-            taxAmount: this.props.taxAmount,
+            taxAmount: Math.floor(this.props.taxAmount * 100) / 100,
             percOfInc: this.props.percOfInc,
             rate: this.props.rates
         };
@@ -18,10 +18,10 @@ class Results extends Component {
             <article id="results">
                 <section>
                     <h1>Results</h1>
-                    <Result title="Year:" data={resultsData.year}/>
-                    <Result title="Tax Bracket:" data={resultsData.taxBracket} percent="t"/>
-                    <Result title="Tax Amount:" data={resultsData.taxAmount}/>
-                    <Result title="Percentage Of Income:" data={resultsData.percOfInc} percent="t"/>
+                    <Result title="Year" data={resultsData.year}/>
+                    <Result title="Tax Bracket" data={resultsData.taxBracket} percent="t"/>
+                    <Result title="Tax Amount" data={resultsData.taxAmount} dollarSign="t"/>
+                    <Result title="Percentage Of Income" data={resultsData.percOfInc} percent="t"/>
                 </section>
             </article>
         );
