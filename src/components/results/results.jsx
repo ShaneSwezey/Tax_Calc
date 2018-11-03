@@ -12,7 +12,7 @@ class Results extends Component {
             rate: this.props.rates
         };
         
-        if (resultsData.year === null) return ( <div></div> );
+        if (resultsData.year === null) return null;
 
         return (
             <article id="results">
