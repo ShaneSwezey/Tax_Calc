@@ -26,8 +26,8 @@ class Results extends Component {
                     <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
                     <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
                     <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
-                    <Result title="Social Security Tax" data={resultsData.socialSecurityTax} />
-                    <Result title="Medicare Tax" data={resultsData.medicareTax} />
+                    <DollarResult title="Social Security Tax" data={resultsData.socialSecurityTax} />
+                    <DollarResult title="Medicare Tax" data={resultsData.medicareTax} />
                 </section>
             </article>
         );
@@ -42,7 +42,7 @@ const mapStateToProps = state => ({
     taxAmount: state.bracket.taxAmount,
     percOfInc: state.bracket.percOfInc,
     socialSecurityTax: state.bracket.socialSecurityTax,
-    medicareTax: state.medicareTax,
+    medicareTax: state.bracket.medicareTax,
     rates: state.bracket.rates
 });
 
