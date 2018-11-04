@@ -9,7 +9,7 @@ class Results extends Component {
         const resultsData = {
             year: this.props.year,
             taxBracket: this.props.taxBracket,
-            taxAmount: this.props.taxAmount.toLocaleString('en'), // Number formatting
+            taxAmount: this.props.taxAmount === null ? null : this.props.taxAmount.toLocalString('en'), // Number formatting
             percOfInc: this.props.percOfInc,
             rate: this.props.rates
         };
