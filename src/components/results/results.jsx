@@ -11,8 +11,8 @@ class Results extends Component {
             taxBracket: this.props.taxBracket,
             taxAmount: this.props.taxAmount === null ? null : this.props.taxAmount.toLocaleString('en'), // Number formatting
             percOfInc: this.props.percOfInc,
-            socialSecurityTax: this.props.socialSecurityTax,
-            medicareTax: this.props.medicareTax,
+            socialSecurityTax: this.props.socialSecurityTax === null ? null : this.props.socialSecurityTax.toLocaleString('en'),
+            medicareTax: this.props.medicareTax === null ? null : this.props.medicareTax.toLocaleString('en'),
             rate: this.props.rates
         };
         
