@@ -20,6 +20,8 @@ export default function infoReducer(state = BracketState, action) {
                 taxBracket: action.payload.bracketInfo.taxBracket,
                 taxAmount: action.payload.bracketInfo.taxAmount,
                 percOfInc: action.payload.bracketInfo.percentOfIncome,
+                socialSecurityTax: action.payload.bracketInfo.socialSecurityTax,
+                medicareTax: action.payload.bracketInfo.medicareTax,
                 rates: action.payload.bracketInfo.rates,
                 loading: false,
                 error: null
