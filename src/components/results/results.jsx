@@ -26,6 +26,8 @@ class Results extends Component {
                     <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
                     <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
                     <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
+                    <Result title="Social Security Tax" data={resultsData.socialSecurityTax} />
+                    <Result title="Medicare Tax" data={resultsData.medicareTax} />
                 </section>
             </article>
         );
