@@ -11,6 +11,8 @@ class Results extends Component {
             taxBracket: this.props.taxBracket,
             taxAmount: this.props.taxAmount === null ? null : this.props.taxAmount.toLocaleString('en'), // Number formatting
             percOfInc: this.props.percOfInc,
+            socialSecurityTax: this.props.socialSecurityTax,
+            medicareTax: this.props.medicareTax,
             rate: this.props.rates
         };
         
@@ -37,6 +39,8 @@ const mapStateToProps = state => ({
     taxBracket: state.bracket.taxBracket,
     taxAmount: state.bracket.taxAmount,
     percOfInc: state.bracket.percOfInc,
+    socialSecurityTax: state.bracket.socialSecurityTax,
+    medicareTax: state.medicareTax,
     rates: state.bracket.rates
 });
 
