@@ -8,18 +8,18 @@ import Highcharts from 'highcharts';
 
 class Results extends Component {
     render() {
+        if (this.props.year == null) return null;
+        
         const resultsData = {
             year: this.props.year,
             taxBracket: this.props.taxBracket,
-            taxAmount: this.props.taxAmount === null ? null : this.props.taxAmount.toLocaleString('en'), // Number formatting
+            taxAmount: this.props.taxAmount.toLocaleString('en'), // Number formatting
             percOfInc: this.props.percOfInc,
-            socialSecurityTax: this.props.socialSecurityTax === null ? null : this.props.socialSecurityTax.toLocaleString('en'),
-            medicareTax: this.props.medicareTax === null ? null : this.props.medicareTax.toLocaleString('en'),
+            socialSecurityTax: this.props.socialSecurityTax.toLocaleString('en'),
+            medicareTax: this.props.medicareTax.toLocaleString('en'),
             rate: this.props.rates
         };
         
-        if (resultsData.year === null) return null;
-
         const options = {
             chart: {
                 plotBackgroundColor: null,
@@ -28,7 +28,7 @@ class Results extends Component {
                 type: 'pie'
             },
             title: {
-                text: 'Browser market shares in January, 2018'
+                text: 'Income Tax Breakdown'
             },
             tooltip: {
                 pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
