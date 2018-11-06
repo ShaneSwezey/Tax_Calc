@@ -46,55 +46,44 @@ class Results extends Component {
                     }
                 }
             },
+            credits: {
+                enabled: false,
+            },
             series: [{
-                name: 'Brands',
+                name: 'Tax',
                 colorByPoint: true,
                 data: [{
-                    name: 'Chrome',
-                    y: 61.41,
+                    name: 'Income Tax',
+                    y: this.props.taxAmount,
                     sliced: true,
                     selected: true
                 }, {
-                    name: 'Internet Explorer',
-                    y: 11.84
+                    name: 'Social Security Tax',
+                    y: this.props.socialSecurityTax
                 }, {
-                    name: 'Firefox',
-                    y: 10.85
-                }, {
-                    name: 'Edge',
-                    y: 4.67
-                }, {
-                    name: 'Safari',
-                    y: 4.18
-                }, {
-                    name: 'Sogou Explorer',
-                    y: 1.64
-                }, {
-                    name: 'Opera',
-                    y: 1.6
-                }, {
-                    name: 'QQ',
-                    y: 1.2
-                }, {
-                    name: 'Other',
-                    y: 2.61
-                }]
+                    name: 'Medicare Tax',
+                    y: this.props.medicareTax
+                }
+                ]
             }]
         };
 
-
         return (
             <article id="results">
-                <section>
+                <section > 
                     <h1>Results</h1>
-                    <Result title="Year" data={resultsData.year}/>
-                    <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
-                    <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
-                    <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
-                    <DollarResult title="Social Security Tax" data={resultsData.socialSecurityTax} />
-                    <DollarResult title="Medicare Tax" data={resultsData.medicareTax} />
-                    <Chart  options={options}/>
+                    <div className="divLeft">
+                        <Result title="Year" data={resultsData.year}/>
+                        <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
+                        <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
+                        <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
+                        <DollarResult title="Social Security Tax" data={resultsData.socialSecurityTax} />
+                        <DollarResult title="Medicare Tax" data={resultsData.medicareTax} />
+                    </div>
                 </section>
+                <aside className="asideRight">
+                    <Chart options={options}/>
+                </aside>
             </article>
         );
     }
