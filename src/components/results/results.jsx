@@ -4,6 +4,7 @@ import Result from './Result.jsx';
 import PercentResult from './PercentResult.jsx';
 import DollarResult from './DollarResult';
 import Chart from '../charts/Chart.jsx';
+import ChartOptionFactory from '../charts/chartoptions/ChartOptionFactory';
 
 class Results extends Component {
     render() {
@@ -18,6 +19,17 @@ class Results extends Component {
             medicareTax: this.props.medicareTax.toLocaleString('en'), // Number formatting
             rate: this.props.rates
         };
+
+        const incomeVsTaxOption = ChartOptionFactory('IncomeVsTaxOption', {
+            taxAmount: this.props.taxAmount,
+            socialSecurityTax: this.props.socialSecurityTax
+        });
+
+        const taxComparisonTaxOption = ChartOptionFactory('TaxComparisonOption', {
+            taxAmount: this.props.taxAmount,
+            socialSecurityTax: this.props.socialSecurityTax,
+            medicareTax: this.props.medicareTax
+        });
         
         return (
             <article id="results">
@@ -33,7 +45,10 @@ class Results extends Component {
                         </div>
                 </section>
                 <section className="chart">
-                    <Chart options={options}/>
+                    <Chart options={incomeVsTaxOption}/>
+                </section>
+                <section className="chart">
+                    <Chart options={taxComparisonTaxOption}/>
                 </section>
             </article>
         );
