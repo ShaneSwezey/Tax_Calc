@@ -70,20 +70,20 @@ class Results extends Component {
 
         return (
             <article id="results">
-                <section > 
+                <section> 
                     <h1>Results</h1>
-                    <div className="divLeft">
-                        <Result title="Year" data={resultsData.year}/>
-                        <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
-                        <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
-                        <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
-                        <DollarResult title="Social Security Tax" data={resultsData.socialSecurityTax} />
-                        <DollarResult title="Medicare Tax" data={resultsData.medicareTax} />
-                    </div>
+                        <div className="flexBoxContainer">
+                            <Result title="Year" data={resultsData.year}/>
+                            <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
+                            <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
+                            <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
+                            <DollarResult title="Social Security Tax" data={resultsData.socialSecurityTax} />
+                            <DollarResult title="Medicare Tax" data={resultsData.medicareTax} />
+                        </div>
                 </section>
-                <aside className="asideRight">
+                <section className="chart">
                     <Chart options={options}/>
-                </aside>
+                </section>
             </article>
         );
     }
