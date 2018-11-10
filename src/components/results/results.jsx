@@ -37,7 +37,7 @@ class Results extends Component {
                     <h1>Results</h1>
                         <div className="flexBoxContainer">
                             <Result title="Year" data={resultsData.year}/>
-                            <PercentResult title="Tax Bracket" data={resultsData.taxBracket}/>
+                            <PercentResult title="Top Marginal Tax Bracket" data={resultsData.taxBracket}/>
                             <DollarResult title="Tax Amount" data={resultsData.taxAmount} />
                             <PercentResult title="Percentage of Income" data={resultsData.percOfInc} />
                             <DollarResult title="Social Security Tax" data={resultsData.socialSecurityTax} />
