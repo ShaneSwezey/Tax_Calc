@@ -63,4 +63,11 @@
     float: right;
 }
 
+.flexBoxContainer {
+    display: flex;
+    justify-content: space-around;
+}
 
+.group {
+    display: inline-block;
+}
