@@ -44,11 +44,11 @@ class Results extends Component {
                             <DollarResult title="Medicare Tax" data={resultsData.medicareTax} />
                         </div>
                 </section>
-                <section className="chart">
-                    <Chart options={incomeVsTaxOption}/>
-                </section>
-                <section className="chart">
-                    <Chart options={taxComparisonTaxOption}/>
+                <section>
+                    <div className="flexBoxContainer">
+                        <Chart options={incomeVsTaxOption}/>
+                        <Chart options={taxComparisonTaxOption}/>   
+                    </div>
                 </section>
             </article>
         );
