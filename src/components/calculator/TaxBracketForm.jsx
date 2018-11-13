@@ -14,9 +14,9 @@ class TaxBracketForm extends Component {
     // Initialize form with respecting data from props
     handleInitialization() {
         const intialData = {
-            "filing_status": this.props.filingStatus,
-            "annual_wages": this.props.income,
-            "income_year": this.props.incomeYears[0]
+            filing_status: this.props.filingStatus,
+            annual_wages: this.props.income,
+            income_year: this.props.incomeYears[0]
         };
         this.props.initialize(intialData);  
     }
@@ -44,33 +44,31 @@ class TaxBracketForm extends Component {
         return (
             <form onSubmit={handleSubmit(this.getBracketInfo.bind(this))}>
                 <h1>Federal Income Tax Bracket Calculator</h1>
-                    <div className="flexBoxContainer">
-                        <div className="group">
-                            <label htmlFor="FilingStatus">Filing Status</label>
-                            <Field className="item" component="select" id="FilingStatus" name="filing_status">
-                                {statusSelections.map(selection => 
-                                    <option key={selection.key}>{selection.value}</option>
-                                )}
-                            </Field>
-                        </div>
-                        <div className="group">
-                            <label htmlFor="AnnualWages">Annual Wages</label>
-                            <div className="Dollarsign">
-                                <Field className="item" component="input" type="number" id="AnnualWages" name="annual_wages" min="1" step="any"></Field>
-                            </div>
-                        </div>
-                        <div className="group">
-                            <label htmlFor="IncomeYear" >Income Year</label>
-                            <Field className="item" component="select" id="IncomeYear" name="income_year">
-                                {incomeYears.map(year => 
-                                    <option key={year}>{year}</option>
-                                )}
-                            </Field>
+                <div className="flexBoxContainer">
+                    <div className="group">
+                        <label htmlFor="FilingStatus">Filing Status</label>
+                        <Field className="item" component="select" id="FilingStatus" name="filing_status">
+                            {statusSelections.map(selection => 
+                                <option key={selection.key}>{selection.value}</option>
+                            )}
+                        </Field>
+                    </div>
+                    <div className="group">
+                        <label htmlFor="AnnualWages">Annual Wages</label>
+                        <div className="Dollarsign">
+                            <Field className="item" component="input" type="number" id="AnnualWages" name="annual_wages" min="1" step="any"></Field>
                         </div>
                     </div>
-                    <div id="CalcButtonWrapper">
-                        <button className="Button" id="CalcButton" >Calculate</button>
+                    <div className="group">
+                        <label htmlFor="IncomeYear">Income Year</label>
+                        <Field className="item" component="select" id="IncomeYear" name="income_year">
+                            {incomeYears.map(year => 
+                                <option key={year}>{year}</option>
+                            )}
+                        </Field>
                     </div>
+                    <button className="Button" id="CalcButton">Calculate</button>
+                </div>   
             </form>
         );
     }

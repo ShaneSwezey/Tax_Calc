@@ -39,10 +39,12 @@
 
 .Button {
     background: #233;
-    padding: 10px;
     font-weight: bold;
     font-size: 14px;
     color: #9d9d9d;
+    width: 270px;
+    height: 34px;
+    align-self: flex-end;
 }
 
 .Button:hover {
@@ -52,15 +54,6 @@
 
 .Button:focus {
     outline: none;
-}
-
-#CalcButtonWrapper {
-    overflow: hidden;
-    width: 100%;
-}
-
-#CalcButton {
-    float: right;
 }
 
 .flexBoxContainer {
@@ -73,3 +66,5 @@
 .group {
     display: inline-block;
 }
+
+
