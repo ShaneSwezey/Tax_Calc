@@ -5,12 +5,16 @@ import PercentResult from './PercentResult.jsx';
 import DollarResult from './DollarResult';
 import Chart from '../charts/Chart.jsx';
 import ChartOptionFactory from '../../factory/ChartOptionFactory';
+import Title from '../title/Title';
 import './Results.css';
+import ResultImg from '../../assets/img/results.png';
 
 class Results extends Component {
     render() {
         if (this.props.year == null) return null;
-        
+
+        const title = 'Results';
+
         const resultsData = {
             year: this.props.year,
             taxBracket: this.props.taxBracket,
@@ -34,8 +38,8 @@ class Results extends Component {
         
         return (
             <article id="results">
-                <section> 
-                    <h1>Results</h1>
+                <section>
+                    <Title headerTitle={title} imgSrc={ResultImg} altMessage={title}/> 
                         <div className="flexBoxContainer">
                             <Result title="Year" data={resultsData.year}/>
                             <PercentResult title="Top Marginal Tax Bracket" data={resultsData.taxBracket}/>
