@@ -1,0 +1,4 @@
+.flexBoxContainer {
+    display: flex;
+    flex-wrap: wrap;
+}

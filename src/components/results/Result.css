@@ -1,8 +1,3 @@
-.flexBoxContainer {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 .resultBox {
     border: 1px solid #000;
     border-radius: 5px;
