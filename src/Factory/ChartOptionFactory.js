@@ -20,7 +20,10 @@ const createIncomeVsTaxOption = (val) => {
             type: 'pie'
         },
         title: {
-            text: 'Income vs Tax'
+            text: 'Income vs Tax',
+            style: {
+                fontWeight: 'bold'
+            }
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
@@ -67,7 +70,10 @@ const createTaxComparisonOption = (val) => {
             type: 'pie'
         },
         title: {
-            text: 'Tax Breakdown'
+            text: 'Tax Breakdown',
+            style: {
+                fontWeight: 'bold'
+            }
         },
         tooltip: {
             pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
