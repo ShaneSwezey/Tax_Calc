@@ -4,7 +4,7 @@ import Result from './Result.jsx';
 import PercentResult from './PercentResult.jsx';
 import DollarResult from './DollarResult';
 import Chart from '../charts/Chart.jsx';
-import ChartOptionFactory from '../charts/chartoptions/ChartOptionFactory';
+import ChartOptionFactory from '../../factory/ChartOptionFactory';
 import './Results.css';
 
 class Results extends Component {
