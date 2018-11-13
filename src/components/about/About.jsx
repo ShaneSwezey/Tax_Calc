@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './About.css';
+import TaxImg from '../../assets/img/tax.png';
 
 class About extends Component {
     render() {
