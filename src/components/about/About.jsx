@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import Title from '../title/Title';
 import './About.css';
 import TaxImg from '../../assets/img/tax.png';
 
-class About extends Component {
+class About extends Component {    
     render() {
+        const title = 'The Federal Income Tax';
+
         return (
             <article className="About">
                 <section>
-                    <h1>The Federal Income Tax</h1>
+                    <Title headerTitle={title} imgSrc={TaxImg} altMessage={title}/>
                     <p>
                         The federal personal income tax that is administered by the Internal 
                         Revenue Service (IRS) is the largest source of revenue for the U.S. 
