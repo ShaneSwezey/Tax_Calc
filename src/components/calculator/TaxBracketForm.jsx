@@ -43,7 +43,6 @@ class TaxBracketForm extends Component {
         
         return (
             <form onSubmit={handleSubmit(this.getBracketInfo.bind(this))}>
-                <h1>Federal Income Tax Bracket Calculator</h1>
                 <div className="flexBoxContainer">
                     <div className="group">
                         <label htmlFor="FilingStatus">Filing Status</label>
