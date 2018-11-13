@@ -28,7 +28,7 @@ class TaxBracketForm extends Component {
 
     render() {
         const statusSelections = [{ key: 'single', value: 'Single'}, 
-        {key: 'marriedj', value: 'Married filing jointly'}, {key: 'marrieds', value: 'Married filing Seperately'}, 
+        {key: 'marriedj', value: 'Married filing jointly'}, {key: 'marrieds', value: 'Married filing seperately'}, 
         {key: 'household', value: 'Head of household'}];
 
         const { error, loading, incomeYears, handleSubmit } = this.props;
