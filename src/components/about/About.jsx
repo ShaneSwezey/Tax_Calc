@@ -34,3 +34,5 @@ class About extends Component {
 }
 
 export default About;
+
+// Icon made by Freepik from www.flaticon.com 

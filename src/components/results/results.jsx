@@ -73,3 +73,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(Results);
+
+// Icon made by Freepik from www.flaticon.com 

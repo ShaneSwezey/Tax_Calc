@@ -16,3 +16,5 @@ const Calculator = () => (
 );
 
 export default Calculator;
+
+// Icon made by Freepik from www.flaticon.com 
